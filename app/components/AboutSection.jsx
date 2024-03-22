@@ -23,7 +23,7 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>test</li>
+        <li>Bay Valley Tech Code Academy</li>
       </ul>
     ),
   },
@@ -32,7 +32,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>test</li>
+        <li>Intro to HTML, CSS</li>
+        <li>Intro to CMS</li>
+        <li>Intro to JavaScript</li>
       </ul>
     ),
   },
@@ -51,13 +53,14 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+        <Image src="/images/IMG_6128 2.png" width={350} height={350} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          Lorem ipsum dolor sit amet, 
-          consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
-          Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+          Hey my name is Christian Rodrigues, Im a Frontend/Web Developer since 2022. 
+          I have a passion for coding and creating new things. I have a strong background in HTML, CSS, JavaScript, and React.
+           I am always looking to learn new things and expand my knowledge in the tech industry. Little something about me 
+           I love to play video games and watch anime. Also really into the gym and big music nerd.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

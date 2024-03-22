@@ -9,25 +9,22 @@ const AnimatedNumbers = dynamic(
   { ssr: false }
 );
 
+const years = new Date().getFullYear() - 2022;
+
 const achievementsList = [
   {
     metric: "Projects",
-    value: "1",
+    value: "8",
     postfix: "+",
   },
   {
-    prefix: "~",
-    metric: "Users",
-    value: "1",
-  },
-  {
     metric: "Awards",
-    value: "1",
+    value: "4",
   },
   {
-    metric: "Years",
-    value: "1",
-  },
+    metric: "years of experience",
+    value: years 
+  }
 ];
 
 const AchievementsSection = () => {
