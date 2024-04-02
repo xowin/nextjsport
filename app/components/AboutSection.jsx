@@ -10,9 +10,9 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Node.js</li>
-        <li>Html</li>
+        <li>HTML</li>
         <li>CSS</li>
-        <li>pyton</li>
+        <li>Python</li>
         <li>JavaScript</li>
         <li>React</li>
       </ul>
@@ -57,10 +57,10 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          Hey my name is Christian Rodrigues, Im a Frontend/Web Developer since 2022. 
-          I have a passion for coding and creating new things. I have a strong background in HTML, CSS, JavaScript, and React.
-           I am always looking to learn new things and expand my knowledge in the tech industry. Little something about me 
-           I love to play video games and watch anime. Also really into the gym and big music nerd.
+          Hey, my name is Christian Rodrigues. I'm a Frontend/Web Developer since 2022. I have a passion for coding and creating new things. 
+          I have a strong background in HTML, CSS, JavaScript, and React. 
+          I am always looking to learn new things and expand my knowledge in the tech industry. 
+          A little something about me: I love to play video games and watch anime. I'm also really into the gym and am a big music nerd.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

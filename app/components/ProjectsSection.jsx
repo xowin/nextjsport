@@ -17,7 +17,7 @@ const projectsData = [
   {
     id: 2,
     title: "Email template with bootstrap",
-    description: "This was a small project I made for BVT, Made in 2023",
+    description: "This was a small project I made for Bay Valley Tech, Made in 2023",
     image: "/images/Cmail.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/xowin/Bootstrap-Grid-Project",
@@ -26,7 +26,7 @@ const projectsData = [
   {
     id: 3,
     title: "Business Communication app",
-    description: "This is a group project im currently working on with my team from BVT, Made in 2024-present.",
+    description: "This is a group project im currently working on with my team from Bay Valley Tech, Made in 2024-present.",
     image: "/images/opowl.png",
     tag: ["All", "Web", "Mobile"],
     gitUrl: "https://github.com/Martyn-Conkling/operating-owls-business-communication-platform",
@@ -53,7 +53,7 @@ const projectsData = [
   {
     id: 6,
     title: "Gym Website",
-    description: "A simple website project made with Wordpress for BVT, Made in 2023",
+    description: "A simple website project made with Wordpress for Bay Valley Tech, Made in 2023",
     image: "/images/bvl.png",
     tag: ["All", "Web", "Mobile"],
     gitUrl: "/",
@@ -62,7 +62,7 @@ const projectsData = [
   {
     id: 7,
     title: "NTG Esports Team (fake)",
-    description: "A project made with wix as a BVT project, Made in 2023",
+    description: "A project made with wix as a Bay Valley Tech project, Made in 2023",
     image: "/images/NTG.png",
     tag: ["All","Web", "Mobile"],
     gitUrl: "/",
