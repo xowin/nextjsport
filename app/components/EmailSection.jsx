@@ -71,6 +71,8 @@ const EmailSection = () => {
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
+            <form action="n=https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="apikey" value="429d869c-82d1-40b7-947c-87658993265b" />
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -123,6 +125,7 @@ const EmailSection = () => {
             >
               Send Message
             </button>
+            </form>
           </form>
         )}
       </div>
