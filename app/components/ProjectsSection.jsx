@@ -21,7 +21,6 @@ const projectsData = [
     image: "/images/Cmail.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/xowin/Bootstrap-Grid-Project",
-    previewUrl: "/",
   },
   {
     id: 3,
@@ -30,7 +29,6 @@ const projectsData = [
     image: "/images/opowl.png",
     tag: ["All", "Web", "Mobile"],
     gitUrl: "https://github.com/Martyn-Conkling/operating-owls-business-communication-platform",
-    previewUrl: "/",
   },
   {
     id: 4,
@@ -39,7 +37,6 @@ const projectsData = [
     image: "/images/clock.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/xowin/Javascript-clock",
-    previewUrl: "/",
   },
   {
     id: 5,
@@ -48,7 +45,6 @@ const projectsData = [
     image: "/images/Ui.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/xowin/UI-Login.git",
-    previewUrl: "/",
   },
   {
     id: 6,
@@ -56,7 +52,6 @@ const projectsData = [
     description: "A simple website project made with Wordpress for Bay Valley Tech, Made in 2023",
     image: "/images/bvl.png",
     tag: ["All", "Web", "Mobile"],
-    gitUrl: "/",
     previewUrl: "https://bayvalleylifts.wordpress.com/",
   },
   {
@@ -65,7 +60,6 @@ const projectsData = [
     description: "A project made with wix as a Bay Valley Tech project, Made in 2023",
     image: "/images/NTG.png",
     tag: ["All","Web", "Mobile"],
-    gitUrl: "/",
     previewUrl: "https://christianrodrigues76.wixsite.com/my-site",
   },
   {
@@ -75,7 +69,6 @@ const projectsData = [
     image: "/images/html.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/bizznest-dev/collaboration-repository-c",
-    previewUrl: "/",
   }
 ];
 
