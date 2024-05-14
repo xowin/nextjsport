@@ -11,8 +11,7 @@ const projectsData = [
     description: "This is the portfolio website you are currently viewing",
     image: "/images/Nextjs.jpg",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/xowin/nextjsport",
-    previewUrl: "https://nextjsport.vercel.app/"
+    gitUrl: "https://github.com/xowin/nextjsport"
   },
   {
     id: 2,
@@ -52,7 +51,7 @@ const projectsData = [
     description: "A simple website project made with Wordpress for Bay Valley Tech, Made in 2023",
     image: "/images/bvl.png",
     tag: ["All", "Web", "Mobile"],
-    previewUrl: "https://bayvalleylifts.wordpress.com/",
+    gitUrl: "https://bayvalleylifts.wordpress.com/",
   },
   {
     id: 7,
@@ -60,7 +59,7 @@ const projectsData = [
     description: "A project made with wix as a Bay Valley Tech project, Made in 2023",
     image: "/images/NTG.png",
     tag: ["All","Web", "Mobile"],
-    previewUrl: "https://christianrodrigues76.wixsite.com/my-site",
+    gitUrl: "https://christianrodrigues76.wixsite.com/my-site",
   },
   {
     id: 8,
@@ -68,7 +67,16 @@ const projectsData = [
     description: "First small project with Digitalnest, Made in 2024",
     image: "/images/html.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/bizznest-dev/collaboration-repository-c",
+    gitUrl: "https://github.com/bizznest-dev/collaboration-repository-c"
+  },
+  {
+    id: 9,
+    title: "Career Harvest",
+    description: "This project is a web scraper that was made using Node.js, React, TypeScript, Sass, Puppeteer, Cheerio, Docker, and Firebase Made in 2024. My role in this project was apart on the backend team and I was responsible for creating the backend API and filtering out searches from different websites.(Not Available for preview)",
+    image: "/images/CareerHarvest.png",
+    Width: 50,
+    Height: 50,
+    tag: ["All", "Web"],
   }
 ];
 
@@ -127,7 +135,6 @@ const ProjectsSection = () => {
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
             />
           </motion.li>
         ))}

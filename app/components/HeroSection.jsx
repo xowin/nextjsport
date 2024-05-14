@@ -45,7 +45,7 @@ const HeroSection = () => {
                 Hire Me
               </a>
               <a
-                href="/Files/Resume-Christian-Rodrigues.pdf"
+                href="/Files/ChrisRodriguesResume.pdf"
                 className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-600 to-secondary-500 hover:bg-slate-800 text-white mt-3"
               >
                 <span className="block bg-[#373737] hover:bg-slate-800 rounded-full px-5 py-2">
@@ -63,7 +63,7 @@ const HeroSection = () => {
         >
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[320px] lg:h-[320px] relative">
             <Image
-              src="/images/hero-img.JPG"
+              src="/images/Hero_IMG.png"
               alt="hero-image"
               className="rounded-full absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={300}

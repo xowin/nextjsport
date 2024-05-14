@@ -7,7 +7,7 @@ const Footer = () => {
         <span>
         <img src="/images/logo.png" alt="logo" width={60} height={60} />
         </span>
-        <p className="text-slate-600">All rights reserved.</p>
+        <p className="text-slate-600">© 2024 Christian Rodrigues. All rights reserved.</p>
       </div>
     </footer>
   );
