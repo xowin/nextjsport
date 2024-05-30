@@ -63,11 +63,11 @@ const HeroSection = () => {
         >
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[320px] lg:h-[320px] relative">
             <Image
-              src="/images/Hero_IMG.png"
+              src="/images/heroimage.png"
               alt="hero-image"
-              className="rounded-full absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
+              className="rounded-full absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              width={275}
+              height={275}
             />
           </div>
         </motion.div>
