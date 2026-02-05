@@ -1,7 +1,14 @@
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+const body = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 export const metadata = {
   title: "Christian Rodrigues - Portfolio",
@@ -11,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${display.variable} ${body.variable}`}>{children}</body>
     </html>
   );
 }

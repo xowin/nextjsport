@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
-import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
@@ -42,31 +41,32 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-8 relative"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-200/60 to-transparent rounded-full h-80 w-80 z-0 blur-2xl absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
+        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Contact</p>
+        <h5 className="font-display text-3xl font-bold text-slate-900 my-2">
+          Let&apos;s build something useful.
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-slate-600 mb-6 max-w-md">
           {" "}
           I&apos;m currently looking for new opportunities, my inbox is always
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
         </p>
-        <div className="socials flex flex-row gap-2">
-          { <a href="https://github.com/xowin">
+        <div className="socials flex flex-row gap-4 items-center">
+          { <a href="https://github.com/xowin" className="rounded-full bg-slate-900 p-2 shadow-sm">
             <Image src={GithubIcon} alt="Github Icon" />
           </a> }
-          { <a href="https://www.linkedin.com/in/christian-rodrigues-91993b233/">
+          { <a href="https://www.linkedin.com/in/christian-rodrigues-91993b233/" className="rounded-full bg-slate-900 p-2 shadow-sm">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </a> }
         </div>
       </div>
-      <div>
+      <div className="rounded-3xl border border-white/70 bg-white/80 p-6 shadow-sm">
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
+          <p className="text-emerald-600 text-sm mt-2">
             Email sent successfully!
           </p>
         ) : (
@@ -74,7 +74,7 @@ const EmailSection = () => {
             <div className="mb-6">
               <label
                 htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
+                className="text-slate-700 block mb-2 text-sm font-semibold"
               >
                 Your email
               </label>
@@ -83,14 +83,14 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="bg-white border border-slate-200 placeholder-slate-400 text-slate-900 text-sm rounded-xl block w-full p-3 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:border-emerald-300"
                 placeholder="example@google.com"
               />
             </div>
             <div className="mb-6">
               <label
                 htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
+                className="text-slate-700 block text-sm mb-2 font-semibold"
               >
                 Subject
               </label>
@@ -99,27 +99,27 @@ const EmailSection = () => {
                 type="text"
                 id="subject"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="bg-white border border-slate-200 placeholder-slate-400 text-slate-900 text-sm rounded-xl block w-full p-3 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:border-emerald-300"
                 placeholder="Just saying hi"
               />
             </div>
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
+                className="text-slate-700 block text-sm mb-2 font-semibold"
               >
                 Message
               </label>
               <textarea
                 name="message"
                 id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="bg-white border border-slate-200 placeholder-slate-400 text-slate-900 text-sm rounded-xl block w-full p-3 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:border-emerald-300 min-h-[140px]"
                 placeholder="Let's talk about..."
               />
             </div>
             <button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full bg-blue-600"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-5 rounded-xl w-full shadow-lg shadow-emerald-600/20 transition"
             >
               Send Message
             </button>
