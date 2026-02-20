@@ -1,6 +1,5 @@
 'use client';
 import React from "react";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
@@ -12,7 +11,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-7 place-self-center text-center sm:text-left justify-self-start"
+          className="col-span-12 place-self-center text-center sm:text-left justify-self-start"
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
             Open to opportunities
@@ -57,22 +56,6 @@ const HeroSection = () => {
                 </span>
               </a>
             </div>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-5 place-self-center mt-4 lg:mt-0"
-        >
-          <div className="rounded-[2.5rem] bg-white/70 border border-white/70 w-[260px] h-[300px] lg:w-[320px] lg:h-[360px] relative shadow-xl shadow-orange-500/10">
-            <Image
-              src="/images/heroimage.png"
-              alt="hero-image"
-              className="rounded-[2rem] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover"
-              width={290}
-              height={330}
-            />
           </div>
         </motion.div>
       </div>

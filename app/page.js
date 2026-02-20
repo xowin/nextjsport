@@ -5,13 +5,21 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
+import SpotifyNowPlaying from "./components/SpotifyNowPlaying";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col text-slate-900">
       <Navbar />
       <div className="container mt-24 mx-auto px-6 sm:px-10 lg:px-16 py-4">
-        <HeroSection />
+        <div className="grid gap-8 lg:grid-cols-12 items-start">
+          <div className="lg:col-span-7">
+            <HeroSection />
+          </div>
+          <div className="lg:col-span-5">
+            <SpotifyNowPlaying compact />
+          </div>
+        </div>
         <AchievementsSection />
         <AboutSection />
         <ProjectsSection />

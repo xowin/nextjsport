@@ -1,5 +1,5 @@
 "use client";
-import React, { useTransition, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
@@ -49,28 +49,15 @@ const TAB_DATA = [
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
+    setTab(id);
   };
 
   return (
     <section className="text-slate-900" id="about">
-      <div className="md:grid md:grid-cols-2 gap-10 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-emerald-200/60 to-orange-200/60 blur-2xl" />
-          <Image
-            src="/images/Hero_IMG.png"
-            width={420}
-            height={420}
-            className="relative rounded-[2rem] border border-white/80 shadow-lg"
-            alt="Portrait"
-          />
-        </div>
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+      <div className="md:grid md:grid-cols-2 gap-10 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        <div className="text-left">
           <h2 className="font-display text-4xl font-bold text-slate-900 mb-4">About Me</h2>
           <p className="text-base lg:text-lg text-slate-600">
             My name is Christian Rodrigues, and I have been working as a Fullstack Developer
@@ -94,30 +81,32 @@ const AboutSection = () => {
             contribute to a well-rounded perspective and a drive for excellence in both
             personal and professional pursuits.
           </p>
-          <div className="flex flex-row justify-start mt-8 gap-4 flex-wrap">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
+        </div>
+        <div className="md:mt-0">
+          <div className="mb-5">
+            <Image
+              src="/images/Hero_IMG.png"
+              width={380}
+              height={380}
+              className="rounded-2xl border border-white/80 shadow-lg"
+              alt="Christian Rodrigues portrait"
+            />
+          </div>
+          <div className="flex flex-row justify-start gap-4 flex-wrap">
+            <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>
               {" "}
               Skills{" "}
             </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
+            <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>
               {" "}
               Education{" "}
             </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
+            <TabButton selectTab={() => handleTabChange("certifications")} active={tab === "certifications"}>
               {" "}
               Certifications{" "}
             </TabButton>
           </div>
-          <div className="mt-6 rounded-2xl border border-white/70 bg-white/70 p-6 shadow-sm">
+          <div className="mt-4 rounded-2xl border border-white/70 bg-white/70 p-6 shadow-sm">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
