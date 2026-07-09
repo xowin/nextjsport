@@ -13,11 +13,11 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-12 place-self-center text-center sm:text-left justify-self-start"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+          <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">
             Open to opportunities
           </span>
-          <h1 className="font-display text-slate-900 mb-4 mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-orange-500">
+          <h1 className="font-display text-white mb-4 mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">
               Hello I&apos;m <br></br>
             </span>
             <TypeAnimation
@@ -28,7 +28,7 @@ const HeroSection = () => {
                 1000,
                 'a Frontend Developer',
                 1000,
-                'IT Support',
+                'an IT Specialist',
                 1000,
               ]}
               wrapper="span"
@@ -36,22 +36,22 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-slate-600 text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-blue-200/80 text-base sm:text-lg mb-6 lg:text-xl">
             Building clean, modern interfaces with a focus on usability and craft.
           </p>
           <div>
             <div>
               <a
                 href="/#contact"
-                className="px-6 inline-flex items-center justify-center py-3 w-full sm:w-fit rounded-full mr-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-lg shadow-emerald-600/20 transition"
+                className="px-6 inline-flex items-center justify-center py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white font-semibold shadow-lg shadow-sky-500/30 transition"
               >
                 Hire Me
               </a>
               <a
                 href="/Files/ChristianRodriguesResume2526.pdf"
-                className="px-1 inline-block py-1 w-full sm:w-fit rounded-full border border-slate-300 text-slate-900 mt-3 hover:border-slate-500 transition"
+                className="px-1 inline-block py-1 w-full sm:w-fit rounded-full border border-blue-400/40 text-white mt-3 hover:border-sky-400 transition"
               >
-                <span className="block bg-white rounded-full px-5 py-2 font-semibold">
+                <span className="block bg-blue-950/60 rounded-full px-5 py-2 font-semibold">
                   Download CV
                 </span>
               </a>

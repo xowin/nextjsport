@@ -4,15 +4,15 @@ import { CodeBracketIcon } from "@heroicons/react/24/outline";
 const ProjectCard = ({ imgUrl, title, description, gitUrl, stack = [] }) => {
   const hasImage = Boolean(imgUrl);
   return (
-    <div className="group rounded-2xl border border-white/70 bg-white/80 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+    <div className="group rounded-2xl border border-blue-400/20 bg-blue-950/40 backdrop-blur shadow-xl shadow-blue-950/40 overflow-hidden transition hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-sky-500/10">
       <div
         className={`h-52 md:h-64 relative ${
-          hasImage ? "" : "bg-gradient-to-br from-emerald-100 via-orange-100 to-white"
+          hasImage ? "" : "bg-gradient-to-br from-sky-900 via-indigo-900 to-blue-950"
         }`}
         style={hasImage ? { background: `url(${imgUrl})`, backgroundSize: "cover" } : undefined}
       >
         {!hasImage && (
-          <div className="absolute inset-0 flex items-center justify-center text-slate-700 font-display text-lg">
+          <div className="absolute inset-0 flex items-center justify-center text-blue-100 font-display text-lg">
             {title}
           </div>
         )}
@@ -29,14 +29,14 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, stack = [] }) => {
         ) : null}
       </div>
       <div className="px-5 py-5">
-        <h5 className="font-display text-xl font-semibold text-slate-900 mb-2">{title}</h5>
-        <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
+        <h5 className="font-display text-xl font-semibold text-white mb-2">{title}</h5>
+        <p className="text-blue-200/70 text-sm leading-relaxed">{description}</p>
         {stack.length ? (
           <div className="mt-4 flex flex-wrap gap-2">
             {stack.map((item) => (
               <span
                 key={item}
-                className="rounded-full bg-slate-900/5 px-3 py-1 text-xs font-semibold text-slate-600"
+                className="rounded-full bg-sky-400/10 border border-sky-400/20 px-3 py-1 text-xs font-semibold text-sky-300"
               >
                 {item}
               </span>

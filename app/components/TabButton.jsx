@@ -8,8 +8,8 @@ const variants = {
 
 const TabButton = ({ active, selectTab, children }) => {
   const buttonClasses = active
-    ? "text-slate-900 bg-white shadow-sm border-slate-200"
-    : "text-slate-500 border-transparent hover:text-slate-900 hover:border-slate-200";
+    ? "text-white bg-sky-400/15 shadow-sm border-sky-400/50"
+    : "text-blue-200/70 border-transparent hover:text-white hover:border-blue-400/30";
 
   return (
     <button
@@ -22,7 +22,7 @@ const TabButton = ({ active, selectTab, children }) => {
       <motion.div
         animate={active ? "active" : "default"}
         variants={variants}
-        className="h-1 bg-emerald-500 mt-2"
+        className="h-1 bg-sky-400 mt-2"
       ></motion.div>
     </button>
   );

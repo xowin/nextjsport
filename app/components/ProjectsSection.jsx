@@ -149,15 +149,15 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <div className="text-center">
-        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Selected Work</p>
-        <h2 className="font-display text-4xl font-bold text-slate-900 mt-3 mb-4">
+        <p className="text-sm uppercase tracking-[0.3em] text-sky-400/80">Selected Work</p>
+        <h2 className="font-display text-4xl font-bold text-white mt-3 mb-4">
           Projects & Experiments
         </h2>
-        <p className="text-slate-600 max-w-2xl mx-auto">
+        <p className="text-blue-200/70 max-w-2xl mx-auto">
           A mix of client work, personal explorations, and collaboration projects.
         </p>
       </div>
-      <div className="text-slate-700 flex flex-row justify-center items-center gap-3 py-6 flex-wrap">
+      <div className="text-blue-100 flex flex-row justify-center items-center gap-3 py-6 flex-wrap">
         <ProjectTag
           onClick={handleTagChange}
           name="All"

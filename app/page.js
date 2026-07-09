@@ -6,10 +6,11 @@ import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
 import SpotifyNowPlaying from "./components/SpotifyNowPlaying";
+import SpotifySection from "./components/SpotifySection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col text-slate-900">
+    <main className="flex min-h-screen flex-col text-blue-50">
       <Navbar />
       <div className="container mt-24 mx-auto px-6 sm:px-10 lg:px-16 py-4">
         <div className="grid gap-8 lg:grid-cols-12 items-start">
@@ -21,6 +22,7 @@ export default function Home() {
           </div>
         </div>
         <AchievementsSection />
+        <SpotifySection />
         <AboutSection />
         <ProjectsSection />
         <EmailSection />
