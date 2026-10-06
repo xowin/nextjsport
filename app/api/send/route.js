@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
-const ownerEmail = process.env.OWNER_EMAIL || fromEmail;
-
 export async function POST(req, res) {
+  // Created per request so a missing key can't fail the build.
+  const apiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.FROM_EMAIL;
+  const ownerEmail = process.env.OWNER_EMAIL || fromEmail;
+  if (!apiKey || !fromEmail) {
+    return NextResponse.json({ error: "Contact form is not configured." }, { status: 500 });
+  }
+  const resend = new Resend(apiKey);
   const { email, subject, message } = await req.json();
   if (!email || !message) {
     return NextResponse.json({ error: "Email and message are required." }, { status: 400 });
