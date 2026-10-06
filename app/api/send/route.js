@@ -22,7 +22,7 @@ export async function POST(req, res) {
   });
   const safeSubject = String(subject || "New contact form submission").slice(0, 200);
   try {
-    const data = await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: fromEmail,
       to: [ownerEmail],
       subject: safeSubject,
@@ -48,11 +48,13 @@ export async function POST(req, res) {
         </div>
       `,
     });
-    if (data?.error) {
+    if (sendError) {
+      console.error("Resend rejected the contact message:", sendError.name, sendError.message);
       return NextResponse.json({ error: "Could not send message." }, { status: 502 });
     }
     return NextResponse.json({ ok: true });
   } catch (error) {
+    console.error("Contact message failed:", error?.message);
     return NextResponse.json({ error: "Could not send message." }, { status: 500 });
   }
 }
