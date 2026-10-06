@@ -22,9 +22,7 @@ body {
   background-color: #0a1228;
   background-image:
     radial-gradient(900px 600px at 10% -10%, rgba(56, 189, 248, 0.12), transparent 60%),
-    radial-gradient(800px 600px at 95% 0%, rgba(255, 181, 71, 0.06), transparent 55%),
-    radial-gradient(rgba(148, 178, 222, 0.1) 1px, transparent 1px);
-  background-size: auto, auto, 28px 28px;
+    radial-gradient(800px 600px at 95% 0%, rgba(255, 181, 71, 0.06), transparent 55%);
   background-attachment: fixed;
   min-height: 100vh;
 }

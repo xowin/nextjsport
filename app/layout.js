@@ -1,5 +1,6 @@
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import NetworkBackground from "./components/NetworkBackground";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -29,7 +30,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
+        <NetworkBackground />
+        {children}
+      </body>
     </html>
   );
 }
