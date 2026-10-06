@@ -1,48 +1,70 @@
 import React from "react";
-import { CodeBracketIcon } from "@heroicons/react/24/outline";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, stack = [] }) => {
-  const hasImage = Boolean(imgUrl);
+const Cover = ({ onOpen, title, children, ...rest }) =>
+  onOpen ? (
+    <button type="button" onClick={onOpen} aria-label={`View details for ${title}`} {...rest}>
+      {children}
+    </button>
+  ) : (
+    <div {...rest}>{children}</div>
+  );
+
+const ProjectCard = ({ imgUrl, Icon, title, description, gitUrl, stack = [], featured, onOpen }) => {
   return (
-    <div className="group rounded-2xl border border-blue-400/20 bg-blue-950/40 backdrop-blur shadow-xl shadow-blue-950/40 overflow-hidden transition hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-sky-500/10">
-      <div
-        className={`h-52 md:h-64 relative ${
-          hasImage ? "" : "bg-gradient-to-br from-sky-900 via-indigo-900 to-blue-950"
+    <div
+      className={`group flex h-full overflow-hidden rounded-2xl border border-blue-300/15 bg-blue-950/30 transition hover:-translate-y-1 hover:border-signal/40 ${
+        featured ? "flex-col md:flex-row" : "flex-col"
+      }`}
+    >
+      <Cover onOpen={onOpen} title={title}
+        className={`relative shrink-0 ${featured ? "h-52 md:h-auto md:w-2/5" : "h-48"} ${
+          imgUrl ? "" : "flex items-center justify-center bg-gradient-to-br from-blue-900 to-ink"
         }`}
-        style={hasImage ? { background: `url(${imgUrl})`, backgroundSize: "cover" } : undefined}
+        style={
+          imgUrl
+            ? { backgroundImage: `url(${imgUrl})`, backgroundSize: "cover", backgroundPosition: "center" }
+            : undefined
+        }
       >
-        {!hasImage && (
-          <div className="absolute inset-0 flex items-center justify-center text-blue-100 font-display text-lg">
-            {title}
-          </div>
-        )}
-        {gitUrl ? (
-          <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-slate-900/70 opacity-0 group-hover:opacity-100 transition-all duration-500 flex">
+        {!imgUrl && Icon ? <Icon className="h-16 w-16 text-signal/80" aria-hidden="true" /> : null}
+      </Cover>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-blue-100/75">{description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {stack.map((item) => (
+            <span
+              key={item}
+              className="rounded-md bg-blue-900/40 px-2 py-0.5 font-mono text-xs text-blue-200/80"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-sm">
+          {onOpen ? (
+            <button
+              type="button"
+              onClick={onOpen}
+              className="inline-flex items-center gap-1 rounded-full bg-signal px-4 py-1.5 font-semibold text-ink transition hover:bg-amber-300"
+            >
+              View details
+            </button>
+          ) : null}
+          {gitUrl ? (
             <a
               href={gitUrl}
-              className="h-12 w-12 border border-white/70 relative rounded-full hover:border-white"
-              aria-label={`View ${title} code`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-semibold text-signal hover:underline"
             >
-              <CodeBracketIcon className="h-6 w-6 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+              View on GitHub <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
             </a>
-          </div>
-        ) : null}
-      </div>
-      <div className="px-5 py-5">
-        <h5 className="font-display text-xl font-semibold text-white mb-2">{title}</h5>
-        <p className="text-blue-200/70 text-sm leading-relaxed">{description}</p>
-        {stack.length ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {stack.map((item) => (
-              <span
-                key={item}
-                className="rounded-full bg-sky-400/10 border border-sky-400/20 px-3 py-1 text-xs font-semibold text-sky-300"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        ) : null}
+          ) : (
+            <span className="text-blue-300/50">No public link</span>
+          )}
+        </div>
       </div>
     </div>
   );

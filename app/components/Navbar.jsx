@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-import Image from "next/image";
+import Logo from "./Logo";
 
 const navLinks = [
   {
     title: "About",
     path: "#about",
+  },
+  {
+    title: "Experience",
+    path: "#experience",
   },
   {
     title: "Music",
@@ -28,26 +32,25 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto top-0 left-0 right-0 z-10 bg-blue-950/70 backdrop-blur border-b border-blue-400/20 shadow-lg shadow-blue-950/30">
+    <nav className="fixed mx-auto top-0 left-0 right-0 z-10 bg-ink/80 backdrop-blur border-b border-blue-300/15">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-      { <a
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
-          <Image src="/images/logo.png" alt="logo" width={80} height={80}/>
-        </a> }
+        <a href="/" aria-label="Christian Rodrigues, home">
+          <Logo />
+        </a>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
+              aria-label="Open menu"
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-blue-400/30 text-blue-200 hover:text-white hover:border-sky-400"
+              className="flex items-center px-3 py-2 border rounded border-blue-300/30 text-blue-200 hover:text-white hover:border-signal"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
+              aria-label="Close menu"
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-blue-400/30 text-blue-200 hover:text-white hover:border-sky-400"
+              className="flex items-center px-3 py-2 border rounded border-blue-300/30 text-blue-200 hover:text-white hover:border-signal"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>

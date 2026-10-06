@@ -1,64 +1,64 @@
-'use client';
+"use client";
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import Terminal from "./Terminal";
+import SpotifyNowPlaying from "./SpotifyNowPlaying";
+import { PROFILE } from "../data";
 
 const HeroSection = () => {
   return (
-    <section>
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-12 place-self-center text-center sm:text-left justify-self-start"
-        >
-          <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">
-            Open to opportunities
+    <section className="grid gap-12 lg:grid-cols-12 lg:items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="lg:col-span-7"
+      >
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/10 px-4 py-1 font-mono text-xs uppercase tracking-[0.18em] text-signal">
+            <span className="h-1.5 w-1.5 rounded-full bg-signal" aria-hidden="true" />
+            Open to opportunities · {PROFILE.location}
           </span>
-          <h1 className="font-display text-white mb-4 mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">
-              Hello I&apos;m <br></br>
-            </span>
-            <TypeAnimation
-              sequence={[
-                'Christian Rodrigues',
-                1000,
-                'a Web Developer',
-                1000,
-                'a Frontend Developer',
-                1000,
-                'an IT Specialist',
-                1000,
-              ]}
-              wrapper="span"
-              speed={30}
-              repeat={Infinity}
-            />
-          </h1>
-          <p className="text-blue-200/80 text-base sm:text-lg mb-6 lg:text-xl">
-            Building clean, modern interfaces with a focus on usability and craft.
-          </p>
-          <div>
-            <div>
-              <a
-                href="/#contact"
-                className="px-6 inline-flex items-center justify-center py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white font-semibold shadow-lg shadow-sky-500/30 transition"
-              >
-                Hire Me
-              </a>
-              <a
-                href="/Files/ChristianRodriguesResume2526.pdf"
-                className="px-1 inline-block py-1 w-full sm:w-fit rounded-full border border-blue-400/40 text-white mt-3 hover:border-sky-400 transition"
-              >
-                <span className="block bg-blue-950/60 rounded-full px-5 py-2 font-semibold">
-                  Download CV
-                </span>
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+          <SpotifyNowPlaying />
+        </div>
+        <h1 className="font-display mt-5 text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          I fix the problem,
+          <br />
+          <span className="text-signal">then teach the fix.</span>
+        </h1>
+        <p className="mt-6 max-w-xl text-base text-blue-100/80 sm:text-lg">
+          I&apos;m Christian Rodrigues, an IT Support Specialist at Digital NEST. I handle Tier I
+          support for 80+ users on Windows and macOS, on site in Stockton and Modesto and remotely
+          for Gilroy, Salinas, and Watsonville, and I build the ticketing tools too.
+        </p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full bg-signal px-7 py-3 font-semibold text-ink transition hover:bg-amber-300"
+          >
+            Hire me
+          </a>
+          <a
+            href={PROFILE.resume}
+            download="Christian_Rodrigues_Resume.pdf"
+            className="inline-flex items-center justify-center rounded-full border border-blue-300/30 px-7 py-3 font-semibold text-white transition hover:border-signal hover:text-signal"
+          >
+            Download CV
+          </a>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="lg:col-span-5"
+      >
+        <Terminal />
+        <p className="mt-3 text-center font-mono text-xs text-blue-200/50">
+          Try it: type a command, press ↑ for history, Tab to complete.
+        </p>
+      </motion.div>
     </section>
   );
 };
