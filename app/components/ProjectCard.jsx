@@ -1,14 +1,23 @@
 import React from "react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
-const ProjectCard = ({ imgUrl, Icon, title, description, gitUrl, stack = [], featured }) => {
+const Cover = ({ onOpen, title, children, ...rest }) =>
+  onOpen ? (
+    <button type="button" onClick={onOpen} aria-label={`View details for ${title}`} {...rest}>
+      {children}
+    </button>
+  ) : (
+    <div {...rest}>{children}</div>
+  );
+
+const ProjectCard = ({ imgUrl, Icon, title, description, gitUrl, stack = [], featured, onOpen }) => {
   return (
     <div
       className={`group flex h-full overflow-hidden rounded-2xl border border-blue-300/15 bg-blue-950/30 transition hover:-translate-y-1 hover:border-signal/40 ${
         featured ? "flex-col md:flex-row" : "flex-col"
       }`}
     >
-      <div
+      <Cover onOpen={onOpen} title={title}
         className={`relative shrink-0 ${featured ? "h-52 md:h-auto md:w-2/5" : "h-48"} ${
           imgUrl ? "" : "flex items-center justify-center bg-gradient-to-br from-blue-900 to-ink"
         }`}
@@ -19,7 +28,7 @@ const ProjectCard = ({ imgUrl, Icon, title, description, gitUrl, stack = [], fea
         }
       >
         {!imgUrl && Icon ? <Icon className="h-16 w-16 text-signal/80" aria-hidden="true" /> : null}
-      </div>
+      </Cover>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-blue-100/75">{description}</p>
@@ -33,7 +42,16 @@ const ProjectCard = ({ imgUrl, Icon, title, description, gitUrl, stack = [], fea
             </span>
           ))}
         </div>
-        <div className="mt-auto pt-5 text-sm">
+        <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-sm">
+          {onOpen ? (
+            <button
+              type="button"
+              onClick={onOpen}
+              className="inline-flex items-center gap-1 rounded-full bg-signal px-4 py-1.5 font-semibold text-ink transition hover:bg-amber-300"
+            >
+              View details
+            </button>
+          ) : null}
           {gitUrl ? (
             <a
               href={gitUrl}

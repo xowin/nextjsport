@@ -106,6 +106,43 @@ export const PROJECTS = [
     tags: ["IT", "Web"],
     gitUrl: "https://github.com/digitalnest-wit/nestqueue",
     stack: ["Next.js", "TypeScript", "MongoDB", "Firebase Auth", "Vercel"],
+    details: {
+      period: "Jul 2025 – Apr 2026",
+      summary:
+        "NestQueue is the ticket management system Digital NEST uses to log, triage, and resolve IT requests across its sites. I led development as top contributor (26 of 50 commits) while guiding student teams through pull requests and code review on GitHub.",
+      role: "Top contributor and designer of the v2 workflow. I wanted every ticket to end with a complete support record: the reported problem, root cause, fix, and verification.",
+      features: [
+        "Triage dashboard with live counts for new, in-progress, resolved, escalated, and high-priority tickets",
+        "Filterable queue by status, priority, category, location, technician, and review status",
+        "Six statuses from New to Closed, with active and resolved/closed views",
+        "Escalation flags and an activity log that records who changed what, and when",
+        "Instructor review for classroom use",
+        "Ticket form that captures the reported problem, category, priority, location, and assigned technician",
+        "Light and dark mode",
+      ],
+      gallery: [
+        {
+          src: "/images/nestqueue/dashboard.webp",
+          alt: "NestQueue dashboard showing ticket counts by status, recent activity, and quick filters",
+          caption: "Dashboard: ticket counts, recent activity, and quick filters",
+        },
+        {
+          src: "/images/nestqueue/queue.webp",
+          alt: "NestQueue ticket queue with status, priority, category, location, and technician filters",
+          caption: "Ticket queue: active and resolved views with six filters",
+        },
+        {
+          src: "/images/nestqueue/new-ticket.webp",
+          alt: "NestQueue create ticket form",
+          caption: "New ticket: reported problem, category, priority, and technician",
+        },
+        {
+          src: "/images/nestqueue/dashboard-dark.webp",
+          alt: "NestQueue dashboard in dark mode",
+          caption: "Dark mode",
+        },
+      ],
+    },
   },
   {
     id: "wifi",

@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import ProjectModal from "./ProjectModal";
 import { PROJECTS } from "../data";
 
 const FILTERS = ["All", "IT", "Web"];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
+  const [selected, setSelected] = useState(null);
   const shown = PROJECTS.filter((p) => tag === "All" || p.tags.includes(tag));
 
   return (
@@ -46,11 +48,13 @@ const ProjectsSection = () => {
                 gitUrl={p.gitUrl}
                 stack={p.stack}
                 featured={p.featured}
+                onOpen={p.details ? () => setSelected(p) : undefined}
               />
             </motion.li>
           ))}
         </AnimatePresence>
       </ul>
+      {selected ? <ProjectModal project={selected} onClose={() => setSelected(null)} /> : null}
     </section>
   );
 };

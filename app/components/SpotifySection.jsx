@@ -101,7 +101,7 @@ const SpotifySection = () => {
 
       <div className="rounded-3xl border border-blue-400/20 bg-blue-950/40 backdrop-blur p-5 sm:p-8 shadow-xl shadow-blue-950/40">
         {isLoading ? (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
@@ -165,7 +165,7 @@ const SpotifySection = () => {
                   ))}
                 </ul>
               ) : (
-                <ul className="grid gap-3 sm:grid-cols-2">
+                <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {items.map((track, i) => (
                     <motion.li
                       key={`${track.title}-${track.playedAt ?? i}`}
