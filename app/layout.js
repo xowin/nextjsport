@@ -2,6 +2,7 @@ import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import NetworkBackground from "./components/NetworkBackground";
+import { SITE_URL } from "./data";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -17,14 +18,31 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Christian Rodrigues – IT Support Specialist",
   description:
     "IT Support Specialist in the San Joaquin Valley. Tier I help desk, desktop support, networking, and the occasional ticketing app.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Christian Rodrigues – IT Support Specialist",
     description:
       "Tier I support for 80+ users on Windows and macOS, plus the developer who builds the tools.",
+    url: "/",
+    siteName: "Christian Rodrigues",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Christian Rodrigues – IT Support Specialist",
+    description:
+      "Tier I support for 80+ users on Windows and macOS, plus the developer who builds the tools.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
