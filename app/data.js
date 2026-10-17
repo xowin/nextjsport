@@ -1,5 +1,10 @@
 import { WifiIcon } from "@heroicons/react/24/outline";
 
+// Vercel sets VERCEL_PROJECT_PRODUCTION_URL to the project's production domain.
+export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const PROFILE = {
   name: "Christian Rodrigues",
   title: "IT Support Specialist",
