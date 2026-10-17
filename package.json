@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@vercel/analytics": "^2.0.1",
     "baseline-browser-mapping": "^2.10.42",
     "blessed": "^0.1.81",
     "caniuse-lite": "^1.0.30001803",

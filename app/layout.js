@@ -1,5 +1,6 @@
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import NetworkBackground from "./components/NetworkBackground";
 
 const display = Bricolage_Grotesque({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
         <NetworkBackground />
         {children}
+        <Analytics />
       </body>
     </html>
   );
