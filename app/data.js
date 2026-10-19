@@ -151,12 +151,12 @@ export const PROJECTS = [
   },
   {
     id: "wifi",
-    title: "Wi-Fi Deployment and Troubleshooting",
+    title: "Stockton Mesh Wi-Fi Deployment",
     description:
-      "Delivered building-wide Wi-Fi at the Stockton center with a Netgear Orbi mesh network. At Modesto, diagnosed unstable Wi-Fi for about 30 people by testing a range extender and the wall ethernet ports against a gateway that could not be moved, then recommended a mesh upgrade.",
+      "Set up a Netgear Orbi mesh network at the Stockton center to deliver building-wide Wi-Fi. I connected the Orbi router to the existing gateway, placed satellites to cover the whole building, and tested signal strength and speed in each room to confirm there were no dead zones.",
     Icon: WifiIcon,
     tags: ["IT"],
-    stack: ["Mesh Wi-Fi", "Troubleshooting", "Netgear Orbi"],
+    stack: ["Mesh Wi-Fi", "Netgear Orbi", "Network Setup"],
   },
   {
     id: "handpaint",
